@@ -1,0 +1,395 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+html {
+  font-size: 13px;
+}
+
+body {
+  width: 100%;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  padding: 2.5rem 5%;
+}
+
+button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+li:hover {
+  color: hsl(5deg, 85%, 63%);
+}
+
+h1 {
+  font-weight: 800;
+  font-size: 3rem;
+  color: hsl(240deg, 100%, 5%);
+}
+
+h2 {
+  font-weight: 800;
+  font-size: 2rem;
+  color: hsl(35deg, 77%, 62%);
+}
+
+h3 {
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: hsl(36deg, 100%, 99%);
+  transition: 0.25s ease;
+  cursor: pointer;
+}
+
+h3:hover {
+  color: hsl(35deg, 77%, 62%);
+}
+
+h4 {
+  font-weight: 700;
+  font-size: 2rem;
+  color: hsl(233deg, 8%, 79%);
+}
+
+h5 {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: hsl(240deg, 100%, 5%);
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+h5:hover {
+  color: hsl(5deg, 85%, 63%);
+}
+
+.close {
+  background: url(../assets/images/icon-menu.svg) no-repeat;
+  background-size: 100% 100%;
+}
+
+.open {
+  background: url(../assets/images/icon-menu-close.svg) no-repeat;
+  background-size: 55% 100%;
+}
+
+header {
+  width: 100%;
+}
+header nav {
+  position: relative;
+  width: 100%;
+  height: 2.8rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+header nav .logo img {
+  height: 2.3rem;
+}
+header nav .menu {
+  width: 2.8rem;
+  height: 50%;
+  z-index: 5;
+  cursor: pointer;
+}
+header nav ul.toggle-list {
+  position: absolute;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1.3rem;
+  right: 0;
+  top: 0;
+  background-color: hsl(36deg, 100%, 99%);
+  width: 70%;
+  min-height: 100vh;
+  padding: 30% 6%;
+  color: hsl(240deg, 100%, 5%);
+  display: none;
+}
+header nav ul.toggle-list li {
+  cursor: pointer;
+}
+
+main {
+  width: 100%;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3.5rem;
+}
+main section {
+  width: 100%;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+main section.upper {
+  gap: 3.5rem;
+}
+main section.first .first-img {
+  background: url(../assets/images/image-web-3-mobile.jpg) no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 20rem;
+}
+main section.first .first-des {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+main section.first .first-des .answer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+main section.first .first-des .answer p {
+  line-height: 2rem;
+  color: hsl(236deg, 13%, 42%);
+}
+main section.first .first-des .answer button {
+  background-color: hsl(5deg, 85%, 63%);
+  text-transform: uppercase;
+  color: hsl(36deg, 100%, 99%);
+  font-weight: 700;
+  letter-spacing: 0.2rem;
+  font-size: 1rem;
+  width: 13rem;
+  height: 3.5rem;
+  transition: 0.25s ease;
+}
+main section.first .first-des .answer button:hover {
+  background-color: hsl(240deg, 100%, 5%);
+}
+main section.second {
+  background-color: hsl(240deg, 100%, 5%);
+  color: white;
+  padding: 1.5rem;
+}
+main section.second .news {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1.6rem;
+}
+main section.second .news article {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding-bottom: 1.6rem;
+  border-bottom: solid 1px hsl(236deg, 13%, 42%);
+  width: 100%;
+}
+main section.second .news article p {
+  line-height: 1.8rem;
+  color: hsl(233deg, 8%, 79%);
+}
+main section.second .news article.last {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+main section.third section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+main section.third section .img {
+  width: 30%;
+  height: 10rem;
+}
+main section.third section .details {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.7rem;
+}
+main section.third section .details p {
+  color: hsl(236deg, 13%, 42%);
+  line-height: 1.5rem;
+}
+main section.third section.pc .img {
+  background: url(../assets/images/image-retro-pcs.jpg) no-repeat;
+  background-size: cover;
+}
+main section.third section.laptops .img {
+  background: url(../assets/images/image-top-laptops.jpg) no-repeat;
+  background-size: cover;
+}
+main section.third section.gaming .img {
+  background: url(../assets/images/image-gaming-growth.jpg) no-repeat;
+  background-size: cover;
+}
+
+@media screen and (min-width: 768px) {
+  html {
+    font-size: 15px;
+  }
+  h1 {
+    font-size: 3.5rem;
+  }
+  h4 {
+    font-size: 3rem;
+  }
+  h5 {
+    font-size: 1.2rem;
+  }
+  body {
+    padding: 6rem 10%;
+  }
+  header nav {
+    height: 4rem;
+  }
+  header nav .logo img {
+    height: 100%;
+  }
+  header nav .menu {
+    display: none;
+  }
+  header nav ul.toggle-list {
+    position: static;
+    z-index: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 2.2rem;
+    background-color: transparent;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    min-height: 100%;
+    padding: 0;
+    color: hsl(236deg, 13%, 42%);
+  }
+  main {
+    margin-top: 3rem;
+    gap: 5rem;
+  }
+  main section {
+    width: auto;
+  }
+  main section.upper {
+    width: 100%;
+    height: 35rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+  main section.first {
+    height: 100%;
+    width: 67%;
+    gap: 2rem;
+  }
+  main section.first .first-img {
+    background: url(../assets/images/image-web-3-desktop.jpg) no-repeat;
+    background-size: cover;
+    height: 60%;
+  }
+  main section.first .first-des {
+    height: 40%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+  }
+  main section.first .first-des .answer {
+    justify-content: space-between;
+    height: 100%;
+  }
+  main section.first .first-des .answer p {
+    line-height: 2.3rem;
+  }
+  main section.second {
+    height: 100%;
+    width: 33%;
+    padding: 2rem;
+    gap: 2.3rem;
+  }
+  main section.second .news {
+    gap: 2rem;
+  }
+  main section.second .news article {
+    padding-bottom: 2rem;
+  }
+  main section.third {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    height: 14rem;
+    width: 100%;
+  }
+  main section.third section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1.3rem;
+    height: 100%;
+    width: 33%;
+  }
+  main section.third section .img {
+    width: 40%;
+    height: 100%;
+  }
+  main section.third section .details {
+    width: 60%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.9rem;
+  }
+  main section.third section .details p {
+    line-height: 1.8rem;
+  }
+}/*# sourceMappingURL=style.css.map */

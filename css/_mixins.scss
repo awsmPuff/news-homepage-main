@@ -1,0 +1,13 @@
+@mixin flexbox($direction: row, $justify: center, $align: center, $gap: 20px) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+    gap: $gap;
+}
+
+@mixin fontStyle($fontWeight: 700, $fontSize, $fontColor) {
+    font-weight: $fontWeight;
+    font-size: $fontSize;
+    color: $fontColor;
+}

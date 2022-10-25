@@ -1,0 +1,333 @@
+@import 'variables';
+@import 'mixins';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    font-family: $myFont;
+}
+html {
+    font-size: $baseSize;
+}
+body {
+    width: 100%;
+    height: max-content;
+    padding: 2.5rem 5%;
+}
+button {
+    @include flexbox;
+    border: none;
+    cursor: pointer;
+}
+ul {
+    list-style: none;
+}
+li {
+    cursor: pointer;
+    transition: $transition;
+}
+li:hover {
+    color: $softRed;
+}
+h1 {
+    @include fontStyle($fontWeight: 800, $fontSize: 3rem, $fontColor: $veryDarkBlue);
+}
+h2 {
+    @include fontStyle($fontWeight: 800, $fontSize: 2rem, $fontColor: $softOrange);
+}
+h3 {
+    @include fontStyle($fontSize: 1.3rem, $fontColor: $offWhite);
+    transition: $transition;
+    cursor: pointer;
+}
+h3:hover {
+    color: $softOrange;
+}
+h4 {
+    @include fontStyle($fontSize: 2rem, $fontColor: $grayishBlue);
+}
+h5 {
+    @include fontStyle($fontSize: 1.1rem, $fontColor: $veryDarkBlue);
+    cursor: pointer;
+    transition: $transition;
+}
+h5:hover {
+    color: $softRed;
+}
+.close {
+    background: url(../assets/images/icon-menu.svg) no-repeat;
+    background-size: 100% 100%;
+}
+.open {
+    background: url(../assets/images/icon-menu-close.svg) no-repeat;
+    background-size: 55% 100%;
+}
+
+header {
+    width: 100%;
+
+    nav {
+        position: relative;
+        width: 100%;
+        height: 2.8rem;
+        @include flexbox($justify: space-between);
+
+        .logo {
+            img {
+                height: 2.3rem;
+            }
+        }
+        .menu {
+            width: 2.8rem;
+            height: 50%;
+            z-index: 5;
+            cursor: pointer;
+        }
+        ul.toggle-list {
+            position: absolute;
+            z-index: 3;
+            @include flexbox($direction: column, $align: flex-start, $justify: flex-start, $gap: 1.3rem);
+            right: 0;
+            top: 0;
+            background-color: $offWhite;
+            width: 70%;
+            min-height: 100vh;
+            padding: 30% 6%;
+            color: $veryDarkBlue;
+            display: none;
+
+            li {
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+main {
+    width: 100%;
+    margin-top: 2rem;
+    @include flexbox($direction: column, $gap: 3.5rem);
+  
+    section {
+        width: 100%;
+        height: max-content;
+        @include flexbox($direction: column, $align: flex-start, $gap: 1.5rem);
+    }
+    section.upper {
+        gap: 3.5rem;
+    }
+    section.first {
+        .first-img {
+            background: url(../assets/images/image-web-3-mobile.jpg) no-repeat;
+            background-size: cover;
+            width: 100%;
+            height: 20rem;
+        }
+        .first-des {
+            @include flexbox($direction: column, $align: flex-start, $gap: 1.5rem);
+            
+            .answer {
+                @include flexbox($direction: column, $align: flex-start, $gap: 1.5rem);
+                p {
+                    line-height: 2rem;
+                    color: $darkGrayishBlue;
+                }
+                button {
+                    background-color: $softRed;
+                    text-transform: uppercase;
+                    color: $offWhite;
+                    font-weight: 700;
+                    letter-spacing: 0.2rem;
+                    font-size: 1rem;
+                    width: 13rem;
+                    height: 3.5rem;
+                    transition: $transition;
+                }
+                button:hover {
+                    background-color: $veryDarkBlue;
+                }
+            }
+        }
+    }
+
+    section.second {
+        background-color: $veryDarkBlue;
+        color: white;
+        padding: 1.5rem;
+
+        .news {
+            @include flexbox($direction: column, $align: flex-start, $gap: 1.6rem);
+
+            article {
+                @include flexbox($direction: column, $align: flex-start, $gap: 0.5rem);
+                padding-bottom: 1.6rem;
+                border-bottom: solid 1px $darkGrayishBlue;
+                width: 100%;
+
+                p {
+                    line-height: 1.8rem;
+                    color: $grayishBlue;
+                }
+            }
+
+            article.last {
+                padding-bottom: 0;
+                border-bottom: none;
+            }
+        }
+    }
+
+    section.third {
+        section {
+            @include flexbox($gap: 1rem);
+
+            .img {
+                width: 30%;
+                height: 10rem;
+            }
+            .details {
+                width: 70%;
+                @include flexbox($direction: column, $align: flex-start, $justify: space-between, $gap: 0.7rem);
+                p {
+                    color: $darkGrayishBlue;
+                    line-height: 1.5rem;
+                }
+            }
+        }
+
+        section.pc {
+            .img {
+                background: url(../assets/images/image-retro-pcs.jpg) no-repeat;
+                background-size: cover;
+            }
+        }
+        section.laptops {
+            .img {
+                background: url(../assets/images/image-top-laptops.jpg) no-repeat;
+                background-size: cover;
+            }
+        }
+        section.gaming {
+            .img {
+                background: url(../assets/images/image-gaming-growth.jpg) no-repeat;
+                background-size: cover;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    html {
+        font-size: 15px;
+    }
+    h1 {
+        font-size: 3.5rem;
+    }
+    h4 {
+        font-size: 3rem;
+    }
+    h5 {
+        font-size: 1.2rem;
+    }
+    body {
+        padding: 6rem 10%;
+    }
+    header {
+    
+        nav {
+            height: 4rem;
+    
+            .logo {
+                img {
+                    height: 100%;
+                }
+            }
+            .menu {
+                display: none;
+            }
+            ul.toggle-list {
+                position: static;
+                z-index: 0;
+                @include flexbox($direction: row, $align: center, $justify: flex-end, $gap: 2.2rem);
+                background-color: transparent;
+                width: max-content;
+                min-height: 100%;
+                padding: 0;
+                color: $darkGrayishBlue;
+            }
+        }
+    }
+    main {
+        margin-top: 3rem;
+        gap: 5rem;
+      
+        section {
+            width: auto;
+        }
+        section.upper {
+            width: 100%;
+            height: 35rem;
+            @include flexbox($direction: row, $align: center, $gap: 2rem);
+        }
+        section.first {
+            height: 100%;
+            width: 67%;
+            gap: 2rem;
+            .first-img {
+                background: url(../assets/images/image-web-3-desktop.jpg) no-repeat;
+                background-size: cover;
+                height: 60%;
+            }
+            .first-des {
+                height: 40%;
+                @include flexbox($direction: row, $align: center, $gap: 5rem); 
+                .answer {
+                    justify-content: space-between;
+                    height: 100%;
+                    p{
+                        line-height: 2.3rem;
+                    }
+                }
+            }
+        }
+    
+        section.second {
+            height: 100%;
+            width: 33%;
+            padding: 2rem;
+            gap: 2.3rem;
+            .news {
+                gap: 2rem;
+                article {
+                    padding-bottom: 2rem;
+                }
+            }
+        }
+    
+        section.third {
+            @include flexbox($direction: row, $align: center, $justify: space-between);
+            height: 14rem;
+            width: 100%;
+            section {
+                @include flexbox($gap: 1.3rem);
+                height: 100%;
+                width: 33%;
+                .img {
+                    width: 40%;
+                    height: 100%;
+                }
+                .details {
+                    width: 60%;
+                    height: 90%;
+                    @include flexbox($direction: column, $align: flex-start, $justify: space-between, $gap: 0.9rem);
+                    p {
+                        line-height: 1.8rem;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | News homepage</title>
+
+  <link rel="stylesheet" href="./css/style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+  <header>
+    <nav>
+      <div class="logo">
+        <img src="./assets/images/logo.svg" alt="logo">
+      </div>
+      <div class="menu close"></div>
+      <ul class="toggle-list">
+        <li>Home</li>
+        <li>New</li>
+        <li>Popular</li>
+        <li>Trending</li>
+        <li>Categories</li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="upper">
+      <section class="first">
+      <div class="first-img"></div>
+      <div class="first-des">
+        <h1>The Bright Future of Web 3.0?</h1>
+        <div class="answer">
+          <p>
+            We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. 
+            But is it really fulfilling its promise?
+          </p>
+          <button>Read more</button>
+        </div>
+      </div>
+      </section>
+      <section class="second">
+      <h2>New</h2>
+      <div class="news">
+        <article>
+          <h3>Hydrogen VS Electric Cars</h3>
+          <p>Will hydrogen-fueled cars ever catch up to EVs?</p>
+        </article>
+        <article>
+          <h3>The Downsides of AI Artistry</h3>
+          <p>What are the possible adverse effects of on-demand AI image generation?</p>
+        </article>
+        <article class="last">
+          <h3>Is VC Funding Drying Up?</h3>
+          <p>Private funding by VC firms is down 50% YOY. We take a look at what that means.</p>
+        </article>
+      </div>
+      </section>
+    </section>
+    <section class="third">
+      <section class="pc">
+        <div class="img"></div>
+        <div class="details">
+          <h4>01</h4>
+          <h5>Reviving Retro PCs</h5>
+          <p>What happens when old PCs are given modern upgrades?</p>
+        </div>
+      </section>
+      <section class="laptops">
+        <div class="img"></div>
+        <div class="details">
+          <h4>02</h4>
+          <h5>Top 10 Laptops of 2022</h5>
+          <p>Our best picks for various needs and budgets.</p>
+        </div>
+      </section>
+      <section class="gaming">
+        <div class="img"></div>
+        <div class="details">
+          <h4>03</h4>
+          <h5>The Growth of Gaming</h5>
+          <p>How the pandemic has sparked fresh opportunities.</p>
+        </div>
+      </section>
+    </section>
+  </main>
+ 
+
+  <script>
+    const menuBtn = document.querySelector(".menu");
+    const toggleMenu = document.querySelector(".toggle-list");
+
+    menuBtn.addEventListener("click", () => {
+      if(menuBtn.classList.contains("close")) {
+        menuBtn.classList.remove("close");
+        menuBtn.classList.add("open");
+        toggleMenu.style.display = "flex";
+      } else if (menuBtn.classList.contains("open")) {
+        menuBtn.classList.remove("open");
+        menuBtn.classList.add("close");
+        toggleMenu.style.display = "none";
+      }
+    })
+  </script>
+</body>
+</html>
